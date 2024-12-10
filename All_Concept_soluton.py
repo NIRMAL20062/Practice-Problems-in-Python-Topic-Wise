@@ -1076,26 +1076,38 @@ print(list1) """
 
 # Q 9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
 
-""" list1 = [1, 3, 5, 7, 6, 3, 8, 3, 5, 2, 3, 5, 2, 3]
-dict1 = {}
-# Count occurrences of each element in the list
-for i in list1:
-    if i in dict1:
-        dict1[i] += 1  # Increment the count if the element is already in the dictionary
-    else:
-        dict1[i] = 1  # Initialize the count for the new element
-print(dict1)
-# Find the maximum count (i.e., the mode
-max_count = max(dict1.values())
-# # Find all keys with the maximum count
-# mode = [key for key, value in dict1.items() if value == max_count]
-# print(mode)  # [3, 5, 2, 3]
+def find_mode(numbers):
+    """
+    Function to find the mode(s) of a list of integers using a dictionary.
+    :param numbers: List of integers
+    :return: List of mode(s) with the highest frequency
+    """
+    # Step 1: Count the occurrences of each number
+    frequency = {}
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
 
-mode = []  # Initialize an empty list to store keys with the maximum count
-for key, value in dict1.items():  # Iterate over each key-value pair in the dictionary
-    if value == max_count:  # Check if the current value matches the maximum count
-        mode.append(key)  # Add the corresponding key to the mode list
-print(mode)  # [3, 5, 2, 3] """
+    # Step 2: Find the highest frequency
+    max_frequency = 0
+    for count in frequency.values():
+        if count > max_frequency:
+            max_frequency = count
+
+    # Step 3: Find all numbers with the highest frequency
+    mode = []
+    for num, count in frequency.items():
+        if count == max_frequency:
+            mode.append(num)
+
+    return mode
+
+# Example usage:
+numbers = [1, 2, 2, 3, 3, 4]
+print(find_mode(numbers))  # Output: [2, 3]
+
 
 
 

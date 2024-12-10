@@ -968,38 +968,36 @@ print(dict3)
  """
 
 #Q3. Given a dictionary and a key, return True if the key is present in the dictionary, else return False.
-""" my_dict = {'a': 1, 'b': 2, 'c': 3}
-key='bg'
-def dict2():
+
+""" def dict2(my_dict = {'a': 1, 'b': 2, 'c': 3},
+key='bg'):
     if key in my_dict:
         return True
     else:
         return False
-print(dict2())
+print(dict2()) """
 
-my_dict = {'a': 1, 'b': 2, 'c': 3}
+""" my_dict = {'a': 1, 'b': 2, 'c': 3}
 key='b'
 for i in my_dict:
     if i ==key:
         print(True) """
 
 
-# Q4 . Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
+# Q4. Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
 
 """ keys = ['a', 'e', 'f', 'd']
 dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
 dict2 = {}
-
 def lists_to_dict(keys, dict1):
     for i in range(len(keys)):  # include all keys i=0,1,2,3
        if keys[i] in dict1:
           dict2[keys[i]]=dict1[keys[i]] #direct assign
         # dict2[keys[i]] = dict1.get(keys[i], None)  # safely access dict1
     return dict2
-
 result = lists_to_dict(keys, dict1)
-print(result)
- """
+print(result) """
+
 
 
 """ keys=['a','e','c','d']

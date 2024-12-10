@@ -986,18 +986,19 @@ for i in my_dict:
 
 # Q4. Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
 
-""" keys = ['a', 'e', 'f', 'd']
-dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
-dict2 = {}
-def lists_to_dict(keys, dict1):
+""" def lists_to_dict(keys, dict1):
+    
+    dict2 = {}
     for i in range(len(keys)):  # include all keys i=0,1,2,3
        if keys[i] in dict1:
           dict2[keys[i]]=dict1[keys[i]] #direct assign
         # dict2[keys[i]] = dict1.get(keys[i], None)  # safely access dict1
     return dict2
+keys = ['a', 'e', 'f', 'd']
+dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
 result = lists_to_dict(keys, dict1)
-print(result) """
-
+print(result)
+ """
 
 
 """ keys=['a','e','c','d']
@@ -1074,21 +1075,6 @@ print(list1) """
 
 
 # Q 9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
-
-""" list1=[1,3,5,7,6,3,8,3,5,2,3,5,2,3]
-list1.sort()
-# mode =3
-dict1={}
-for i in list1: #i=0-x
-    list1.count(i)    # count kiya kitne present hai
-    dict1[i]=list1.count(i)
-    list1.remove(i)
-print(dict1)
-x=max(dict1.values())
-for key,value in dict1.items():
-    if value==max(dict1.values()):
-        print(key)  #3,5,2
- """
 
 """ list1 = [1, 3, 5, 7, 6, 3, 8, 3, 5, 2, 3, 5, 2, 3]
 dict1 = {}

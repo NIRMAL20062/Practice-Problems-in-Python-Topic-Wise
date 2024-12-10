@@ -1076,12 +1076,34 @@ print(list1) """
 
 # Q 9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
 
-def find_mode(numbers):
-    """
-    Function to find the mode(s) of a list of integers using a dictionary.
-    :param numbers: List of integers
-    :return: List of mode(s) with the highest frequency
-    """
+""" def get_mode(lst):
+    freq={}
+    for i in lst:
+        if i not in freq:
+            freq[i]=1
+        else:
+            freq[i]+=1
+     
+    max1=0
+    for i in freq:
+        if freq[i]>max1:
+            max1=freq[i]
+    
+    mode=[]
+    for num,count in freq.items():
+        if count==max1:
+            mode.append(num)
+    return mode
+
+print(get_mode([1,1,1,2,2,3,3,3,4,3])) """
+
+
+""" def find_mode(numbers):
+    
+    # Function to find the mode(s) of a list of integers using a dictionary.
+    # :param numbers: List of integers
+    # :return: List of mode(s) with the highest frequency
+    
     # Step 1: Count the occurrences of each number
     frequency = {}
     for num in numbers:
@@ -1106,12 +1128,9 @@ def find_mode(numbers):
 
 # Example usage:
 numbers = [1, 2, 2, 3, 3, 4]
-print(find_mode(numbers))  # Output: [2, 3]
+print(find_mode(numbers))  # Output: [2, 3] """
 
-
-
-
-# Q 10. Given a text file with one word in each line, return a dictionary where the key is the word and the value is the number of times it occurs in the text file.
+#Q10. Given a text file with one word in each line, return a dictionary where the key is the word and the value is the number of times it occurs in the text file.
 
 """ def count_words_in_file(file_path):
     word_count = {}  # Initialize an empty dictionary to store word counts

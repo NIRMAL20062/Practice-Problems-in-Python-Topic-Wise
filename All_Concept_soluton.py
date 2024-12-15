@@ -173,8 +173,7 @@ print(factorial(5)) """
             return True
 print(get_prime(5)) """
 
-
-# 3. Given a positive integer, return the sum of all integers from 1 up to this number.
+#3. Given a positive integer, return the sum of all integers from 1 up to this number.
 """ def sum(num):
     sum=0
     for i in range(1,num+1):
@@ -201,7 +200,7 @@ print(sum_odd(10)) """  #1+3+5=9  #1+3+5+6=15 #15+7+9+11=35+9
 sum_even(10) """
 
 
-# 6. Given a positive integer, return its binary representation (output using integer datatype)
+#Q6. Given a positive integer, return its binary representation (output using integer datatype)
 # if int=5 then binary number will be |5| 1
                                   #   |2| 0
                                   #   |1|
@@ -218,6 +217,7 @@ sum_even(10) """
     for ele in range(1,len(s)+1):  #ele=1,2,3
             str1=str1+s[len(s)-ele]
     print(str1)
+    # return str1[::-1]
 (get_binary(8)) """
 
 """ def get_binary(n):
@@ -270,7 +270,7 @@ for i in range(x):  # Iterating over the loop
     sum = sum + p
 print(sum)    #8 """
 
-# 8. Given a positive integer, return True if its a palindrome, else return False.
+#Q8. Given a positive integer, return True if its a palindrome, else return False.
 
 """ def pel(n):
     str1 = str(n)  # Convert the number to a string
@@ -352,7 +352,7 @@ print(sum) """
         return f"sum is {sum},length is { length}"
 print(get_len_sum([12,45,75,34])) """
 
-# 2. Given a list of numbers, return a list of the squares of all the numbers.
+#Q2. Given a list of numbers, return a list of the squares of all the numbers.
 
 """ def get_squares(list1):
     squares=[]
@@ -362,7 +362,7 @@ print(get_len_sum([12,45,75,34])) """
 print(get_squares([12,45,75,34])) """
 
 
-# 3. Given a list of numbers, return their mean and standard deviation.
+#Q3. Given a list of numbers, return their mean and standard deviation.
 
 # mean = total_sum/total no.
 # standard_deviation = root[(summission_of(x-xbar)**2)/(total_num-1)] , x=mean
@@ -379,7 +379,6 @@ def get_mean_std_dev():
     return f'Mean is: {mean}, Standard Deviation is: {std_dev}'
 print(get_mean_std_dev()) """
 
-
 """ list1 = [2, 44, 63, 22, 3]
 def get_mean_std_dev():
     mean = sum(list1) / len(list1)
@@ -392,8 +391,7 @@ def get_mean_std_dev():
     return f'Mean is: {mean}, Standard Deviation is: {std_dev}'
 print(get_mean_std_dev()) """
 
-
-# 4. Given a list of integers, return the count of even numbers in it.
+#Q4. Given a list of integers, return the count of even numbers in it.
 
 """ def count_even_no():
     list=[12,44,3,7,42,43,10]
@@ -404,19 +402,18 @@ print(get_mean_std_dev()) """
     return count_even_no
 print(count_even_no()) """
 
-
-# 5. Given a list of numbers, return the list in reverse order (without using list splicing).
+#Q5. Given a list of numbers, return the list in reverse order (without using list splicing).
 
 """ def reverse_order_list():
     list1=[12,556,7,32,33]
-    x=len(list1)                       #x=5
+    x=len(list1)                     #x=5
     new_list=[]
     for i in range(x):
         new_list.append(list1[x-1-i])    # to get last index and substract -1 each time 33,32,7,556,12
     return (new_list)
 print(reverse_order_list()) """
 
-# 6. Given a list of numbers, return the maximum number in it.
+#Q6. Given a list of numbers, return the maximum number in it.
 
 """ def get_max(list):
     max=list[0]
@@ -425,9 +422,6 @@ print(reverse_order_list()) """
             max=i
     return max
 print(get_max([1,2,3,4,5,6.6,9])) """
-
-
-
 
 """ def max_in_list():
     list=[12,5,9,55,7,3]
@@ -472,7 +466,6 @@ print(get_index()) """
             max_val += max(lcm, num)  # Increment by larger value for efficiency
         lcm = max_val
     return lcm
-
 # Example usage
 list1 = [2, 3,7]
 result = get_least_common_multiple(list1)
@@ -490,14 +483,9 @@ print("Least common multiple:", result) """
         else:
             greater+=1
     return lcm
-print(lcm1(12,14))
- """
+print(lcm1(12,14)) """
 
-# MEthod-2
-# x=12
-# y=30
-
-# 9. Given a list of integers, return their Greatest Common Divisor (Divisor).
+#Q9. Given a list of integers, return their Greatest Common Divisor (Divisor).
 """ def gcd(a, b):
     # Compute GCD of two numbers using the Euclidean Algorithm.
     while b != 0:
@@ -518,39 +506,42 @@ list1 = [3, 7, 2]
 result = find_gcd_of_list(list1)
 print("Greatest common divisor:", result)  # Outputs: 3 """
 
-# 10. Given a positive integer (n), return a list containing the first n integers in the Fibonacci series.
-
+#Q10. Given a positive integer (n), return a list containing the first n integers in the Fibonacci series.
 # FS-0,1,1,2,3,5,8
-""" n=10
-sum=0
-list=[0,1]
-for i in range(n+1):
-    sum=list[i]+list[i+1]
-    list.append(sum)
-print(list) """
+def generate_fibonacci(n):
+    if n <= 0:
+        return []  # Return an empty list for non-positive input
+    elif n == 1:
+        return [0]  # The first Fibonacci number is 0
+    elif n == 2:
+        return [0, 1]  # The first two Fibonacci numbers are 0 and 1
+    
+    # Initialize the list with the first two Fibonacci numbers
+    fibonacci = [0, 1]
+    
+    # Generate the remaining Fibonacci numbers
+    for _ in range(2, n):
+        next_number = fibonacci[-1] + fibonacci[-2]
+        fibonacci.append(next_number)
+    
+    return fibonacci
 
-""" list2=[2,4,6,3,6]
-list1=[]
-for i in range(len(list2)-1):   #i=0,1,2,3,4
-    for j in range(len(list1)-1):    #i=0,1,2,3,4
-        sum=list2[i]+list2[j]         #when i=0 j=0 to 4
-        list1.append(sum)
-print(list1) """
+# Example usage:
+n = 10
+result = generate_fibonacci(n)
+print("Fibonacci series:", result)
 
-""" list2=[2,4,6,3,6]
-list1=[]
-for i in list2:
-    for j in list2:
-        sum=i+j
-        list1.append(sum)
-print(list1) """
-
+""" for _ in range(3):
+    if _==2:
+     print('d')
+    else:
+     print('g') """
          # Concept-4 👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
                     #  👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
                     # 👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
 
 
-# 1. Given a list of distinct numbers, return another list which contains the sum of all pairs of numbers in the given list (the same pair should not be taken twice).
+#Q1. Given a list of distinct numbers, return another list which contains the sum of all pairs of numbers in the given list (the same pair should not be taken twice).
 
 """ def pair_sums(list1):
     list2 = []  # Initialize the result list
@@ -573,18 +564,28 @@ print(sum([1,2,3,4,5])) """
 
 #Q2. Given a list of distinct numbers (may contain zero), return another list which contains the ratio of all pairs of numbers in the given list (the same pair should not be taken twice).
 
-# wrong code on pytutor
-""" def get_ratio(list1):
-    list2 = []
-    for i in range(len(list1)):
-        for j in range(i + 1, len(list1)):  # ensure each pair is taken only once
-            if list1[j] != 0:  # avoid division by zero
-                list2.append(list1[i] / list1[j])  # calculate ratio for the pair (i, j)
-    return list2
-print(get_ratio(list1 = [1, 4, 6, 7, 9, 4]))
-# Output: [0.25, 0.6666666666666666, 0 .5, 0.42857142857142855, 0.444444444444 4444, 1.0] """
+""" def compute_ratios(numbers):
+    # Initialize an empty list to store the ratios
+    ratios = []
+    
+    # Iterate through all unique pairs using nested loops
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            # Calculate ratio for the pair (numbers[i], numbers[j])
+            if numbers[j] != 0:  # Avoid division by zero
+                ratios.append(numbers[i] / numbers[j])
+            if numbers[i] != 0:  # Avoid division by zero
+                ratios.append(numbers[j] / numbers[i])
+    
+    return ratios
 
-# 3. Given a list of positive integers, return a list of the factorial of all these numbers.
+# Example usage:
+numbers = [1, 2, 3, 4]
+result = compute_ratios(numbers)
+print("Ratios:", result) """
+
+
+#Q3. Given a list of positive integers, return a list of the factorial of all these numbers.
 """ def get_fact(list1):
     list2=[]
     for i in range(len(list1)):
@@ -609,8 +610,7 @@ print(get_fact([3,6,7,5])) """
     return list2
 print(get_factorial())   # 2,6,24,120,720 """
 
-# 4. Given a positive integer, return a list of all prime numbers from 1 up to this number.
-
+#Q4. Given a positive integer, return a list of all prime numbers from 1 up to this number.
 """ def is_prime(n):
     if n <= 1:
         return False
@@ -618,11 +618,15 @@ print(get_factorial())   # 2,6,24,120,720 """
         if n % i == 0:  # If n is divisible by any number, it's not prime
             return False
     return True
-
-
-# 5. Given a positive integer, return the sum of all prime numbers from 1 up to this number.
-
-def is_prime(n):
+def list_prime(lst):
+    prime_list=[]
+    for i in range(lst+1):
+        if  is_prime(i)==True:
+            prime_list.append(i)
+    return prime_list
+print(list_prime(7)) """
+#Q5. Given a positive integer, return the sum of all prime numbers from 1 up to this number.
+""" def is_prime(n):
     if n <= 1:
         return False
     for i in range(2, n):
@@ -637,9 +641,9 @@ def find_primes(n):
     return sum
 # Example usage
 n = 30
-print(find_primes(n))
+print(find_primes(n)) """
 
-n=6
+"""n=6
 sum=0
 for i in range(2,n+1):
     flag=True
@@ -651,79 +655,15 @@ for i in range(2,n+1):
         sum+=i
 print(sum) """
 
-# 6. Given a list of numbers, return another list of co-primes and count how many co-primes are there in this given list.
-
-""" def gcd(a, b):
-    # Euclidean algorithm to find the GCD
-    while b != 0:
-        a, b = b, a % b
-    return a
-
-def is_coprime_with_all(num, lst):
-    # Check if `num` is co-prime with all numbers in the list
-    for x in lst:
-        if gcd(num, x) != 1:
-            return False
-    return True
-
-def find_coprimes(lst):
-    coprime_list = []
-    for i in lst:
-        # Exclude the current number from the rest of the list
-        others = []
-        for x in lst:
-            if x != i:
-                others.append(x)
-        
-        # Check if the current number is co-prime with all other numbers
-        if is_coprime_with_all(i, others):
-            coprime_list.append(i)
-    
-    # Return the list of co-prime numbers and their count
-    return coprime_list, len(coprime_list)
-
-# Example usage
-numbers = [6, 35, 13, 20, 8]
-coprimes, count = find_coprimes(numbers)
-print("Coprime numbers:", coprimes)
-print("Number of co-primes:", count) """
-
-""" def gcd(a, b):
-    # Euclidean algorithm to find the GCD
-    while b != 0:
-        a, b = b, a % b
-    return a
-
-def find_coprimes(lst):
-    coprime_list = []  # List to store co-prime numbers
-    for i in range(len(lst)):
-        is_coprime = True  # Flag to check if the current number is co-prime with all others
-        for j in range(len(lst)):
-            if i != j:  # Do not compare the number with itself
-                if gcd(lst[i], lst[j]) != 1:  # If GCD is not 1, they are not co-prime
-                    is_coprime = False
-                    break  # No need to check further if a non-co-prime pair is found
-        if is_coprime:
-            coprime_list.append(lst[i])  # Add to the list if it's co-prime with all others
-
-    return coprime_list, len(coprime_list)
-
-# Example usage
-numbers = [6, 35, 13, 10]
-coprimes, count = find_coprimes(numbers)
-print("Coprime numbers:", coprimes)
-print("Number of co-primes:", count) """
-
-
-
+#Q6. Given a list of numbers, return another list of co-primes and count how many co-primes are there in this given list.
 """ def gcd(a, b):
     while b != 0:
         a, b = b, a % b
     return a
 
 def find_coprime_pairs(lst):
+    
     coprime_pairs = []  # List to store pairs of co-prime numbers
-
     for i in range(len(lst)):
         for j in range(i + 1, len(lst)):  # Compare each pair only once
             if gcd(lst[i], lst[j]) == 1:  # If GCD is 1, they are co-prime
@@ -804,6 +744,55 @@ else:
 print("Median:", median) """
 
 #Q9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence). Do not use a dictionary.
+""" def mode(lst):
+    unique_no=[]
+    for num in lst:
+        if num not in unique_no:
+            unique_no.append(num)
+    
+    counts=[]
+    for num1 in unique_no:
+        count=lst.count(num1)
+        counts.append(count)
+
+    max1=max(counts)
+
+    mode=[]
+    for i in range(len(unique_no)):
+        if counts[i]==max1:
+            mode.append(unique_no[i])
+    return mode
+print(mode([1,2,2,3,3,3,4,4,4])) """
+""" def find_mode(numbers):
+
+    # unique number ka list banao
+    unique_number=[]
+    for ele in numbers:
+        if ele not in unique_number:
+            unique_number.append(ele)
+
+    # find repeting number counts and append it in a list
+    counts=[]
+    for ele in unique_number:
+        count=0
+        for ele1 in numbers:
+            if ele==ele1:
+                count+=1
+        counts.append(count)
+
+    #  find maximum in counts
+    max=counts[0]
+    for i in counts:
+        if i>max:
+            max=i
+
+    # add max in list named mode
+    mode=[]
+    for i in range(len(unique_number)):
+        if counts[i]==max:
+            mode.append(unique_number[i])
+    return mode
+print(find_mode([1,2,2,3,3,3,2])) """
 
 """ def get_mode(numbers):
 
@@ -811,7 +800,7 @@ print("Median:", median) """
     for num in numbers:
         if num  not in unique_numbers:
             unique_numbers.append(num)
-    
+
     counts=[]
     for number in unique_numbers:
         count=0
@@ -864,24 +853,7 @@ numbers = [4, 6, 2, 4, 3, 6, 1, 4, 6, 2, 2]
 print("Mode:", find_mode(numbers))
 # this method ensures that if more than one number repeates same time and is the most frequent, it will return all of them. """
 
-
-# method-2
-""" lists=[1,4,6,3,4,7,3,3,3,3]
-list1=[]
-max_count = 0
-max_num = None
-for i in set(lists):
-    x=lists.count(i)
-    lists.remove(i)
-    list1.append((f'{i} Occured {x} Times'))
-    if x > max_count:
-        max_count = x
-        max_num = i
-print(list1)
-print(f'Mode is : {max_num}') """
-
-# 10 . Given a list of lists of integers, return a list that is sorted based on the sum of each inner list. Do not use any inbuilt function for sorting.
-
+#Q10. Given a list of lists of integers, return a list that is sorted based on the sum of each inner list. Do not use any inbuilt function for sorting.
 """ def sort_based_on_sum(lists):
     for i in range(len(lists)):
         for j in range(len(lists) - 1):
@@ -897,7 +869,6 @@ print(sort_based_on_sum([[6,6],[2,6],[5,6],[4,6]])) """
                 lists[j], lists[j + 1] = lists[j + 1], lists[j]
     return lists
 print(sort_based_on_sum([[6,6],[2,6],[5,6],[4,6]])) """
-
 
 """ def sort_based(lists):
     for i in range(len(lists)-1):
@@ -937,7 +908,6 @@ def lists_to_dict(keys, values):
     return dict1
 print(lists_to_dict(keys, values))  # Output: {'a': 1, 'b': 2, 'c': 3} """
 
-
 """ keys = ['a', 'b', 'c']
 values = [1, 2, 3]
 def lists_to_dict(keys, values):
@@ -946,10 +916,7 @@ def lists_to_dict(keys, values):
 
 print(lists_to_dict(keys, values))  # Output: {'a': 1, 'b': 2, 'c': 3} """
 
-
-# Q2. Given two dictionaries, merge them and return a single dictionary.
-
-
+#Q2. Given two dictionaries, merge them and return a single dictionary.
 """ dict1 = {'a': 1, 'b': 2}
 dict2 = {'b': 3, 'c': 4}
 def merge_dicts(dict1, dict2):
@@ -964,38 +931,38 @@ dict3={}
 # dict3=dict1.copy()
 dict3.update(dict1)
 dict3.update(dict2)
-print(dict3)
- """
+print(dict3) """
 
 #Q3. Given a dictionary and a key, return True if the key is present in the dictionary, else return False.
-
-""" def dict2(my_dict = {'a': 1, 'b': 2, 'c': 3},
-key='bg'):
+""" my_dict = {'a': 1, 'b': 2, 'c': 3}
+key='bg'
+def dict2():
     if key in my_dict:
         return True
     else:
         return False
-print(dict2()) """
+print(dict2())
 
-""" my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
 key='b'
 for i in my_dict:
     if i ==key:
         print(True) """
 
 
-# Q4. Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
+# Q4 . Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
 
-""" def lists_to_dict(keys, dict1):
-    
-    dict2 = {}
+""" keys = ['a', 'e', 'f', 'd']
+dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
+dict2 = {}
+
+def lists_to_dict(keys, dict1):
     for i in range(len(keys)):  # include all keys i=0,1,2,3
        if keys[i] in dict1:
           dict2[keys[i]]=dict1[keys[i]] #direct assign
         # dict2[keys[i]] = dict1.get(keys[i], None)  # safely access dict1
     return dict2
-keys = ['a', 'e', 'f', 'd']
-dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
+
 result = lists_to_dict(keys, dict1)
 print(result)
  """
@@ -1063,8 +1030,7 @@ print(list1)   #20,35,50 """
 
 
 
-# Q8. Given a fruit name and a dictionary whose keys are people names and the values are the list of fruits they like, return the list of names of people who like this fruit.
-
+#Q8. Given a fruit name and a dictionary whose keys are people names and the values are the list of fruits they like, return the list of names of people who like this fruit.
 """ fruits='banana'
 dict1={'ram':["apple",'banana','pineapple'],"shayam":['banana','pineapple','litchi'],"veer":['pineapple','Mango',"guava"]}
 list1=[]
@@ -1073,62 +1039,45 @@ for people in dict1:
         list1.append(people)
 print(list1) """
 
+#Q9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
 
-# Q 9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
-
-""" def get_mode(lst):
-    freq={}
+""" def mode(lst):
+    dict1 = {}
     for i in lst:
-        if i not in freq:
-            freq[i]=1
+        if i in dict1:
+            dict1[i] += 1
         else:
-            freq[i]+=1
-     
-    max1=0
-    for i in freq:
-        if freq[i]>max1:
-            max1=freq[i]
-    
+            dict1[i] = 1
+    max1=max(dict1.values())
     mode=[]
-    for num,count in freq.items():
-        if count==max1:
-            mode.append(num)
+    for key,value in dict1.items():
+        if value==max1:
+            mode.append(key)
     return mode
+print(mode([1,1,1,3,3,3,4])) """
 
-print(get_mode([1,1,1,2,2,3,3,3,4,3])) """
+""" list1 = [1, 3, 5, 7, 6, 3, 8, 3, 5, 2, 3, 5, 2, 3]
+dict1 = {}
+# Count occurrences of each element in the list
+for i in list1:
+    if i in dict1:
+        dict1[i] += 1  # Increment the count if the element is already in the dictionary
+    else:
+        dict1[i] = 1  # Initialize the count for the new element
+print(dict1)
+# Find the maximum count (i.e., the mode
+max_count = max(dict1.values())
+# # Find all keys with the maximum count
+# mode = [key for key, value in dict1.items() if value == max_count]
+# print(mode)  # [3, 5, 2, 3]
+
+mode = []  # Initialize an empty list to store keys with the maximum count
+for key, value in dict1.items():  # Iterate over each key-value pair in the dictionary
+    if value == max_count:  # Check if the current value matches the maximum count
+        mode.append(key)  # Add the corresponding key to the mode list
+print(mode)  # [3, 5, 2, 3] """
 
 
-""" def find_mode(numbers):
-    
-    # Function to find the mode(s) of a list of integers using a dictionary.
-    # :param numbers: List of integers
-    # :return: List of mode(s) with the highest frequency
-    
-    # Step 1: Count the occurrences of each number
-    frequency = {}
-    for num in numbers:
-        if num in frequency:
-            frequency[num] += 1
-        else:
-            frequency[num] = 1
-
-    # Step 2: Find the highest frequency
-    max_frequency = 0
-    for count in frequency.values():
-        if count > max_frequency:
-            max_frequency = count
-
-    # Step 3: Find all numbers with the highest frequency
-    mode = []
-    for num, count in frequency.items():
-        if count == max_frequency:
-            mode.append(num)
-
-    return mode
-
-# Example usage:
-numbers = [1, 2, 2, 3, 3, 4]
-print(find_mode(numbers))  # Output: [2, 3] """
 
 #Q10. Given a text file with one word in each line, return a dictionary where the key is the word and the value is the number of times it occurs in the text file.
 
@@ -1153,7 +1102,7 @@ print(result) """
                                 #👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
                                 #👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
                                 #👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
-
+# MAX,MIN,LENGTH,COUNT
 
 #Q1. Given a string as input, return its length without using the inbuilt length function.
 """ len1=0
@@ -1163,9 +1112,17 @@ for ele in string:
     len1+=1
 print(len1) """
 
-
 #Q2. Given a string as input, return the string in reverse order (without using string splicing).
-# string are immutable i.e str1[i]=str2[i+1] we can't do thsi
+# string are immutable i.e str1[i]=str2[i+1] we can't do this
+""" def reverse_string(input_string):
+    reversed_string = ""
+    for char in input_string:
+        reversed_string = char + reversed_string
+    return reversed_string
+# Example usage
+input_str = input("Enter a string: ")
+print("Reversed string:", reverse_string(input_str))
+ """
 """ str1="improve"
 str2=""
 for i in range(len(str1)):
@@ -1182,11 +1139,10 @@ for ele in range(1,len(string)+1):
  """
 
 #Q3. Given a string as input, return the number of vowels in it.
-
 """ str1="aeiou"
-str2='improve'
+str2='improveE'
 count=0
-for i in str2:
+for i in str2.lower():
     if i in str1:
         count+=1
 print(count) """
@@ -1208,7 +1164,6 @@ print(x) """
 """ def count_words(input_string):
     words = input_string.split()  # Split the string by spaces into a list of words
     return len(words)  # Return the number of words
-
 # Example Usage
 input_string = "Count the number of words in this string"
 word_count = count_words(input_string)
@@ -1230,7 +1185,6 @@ print(x)
 print(y) """
 
 #Q6. Given a string as input, return the length of the longest word in it. Use space as a separator for words.
-
 """ str1='Good lesson today'
 str2=str1.split(' ')
 list2=[] #4,6,5
@@ -1242,8 +1196,6 @@ for i in str2:
     list2.append(sum)
 print(max(list2)) """
 
-
-
 """ import re
 string='To takee new keys'
 x=re.split('\s',string)
@@ -1254,8 +1206,37 @@ for ele in (x):
             max=len(ele)
 print(max) """
 
+#Q7. Given a string as input, return True if its a valid email address, else return False.             (username@domainname.extension)
+""" def is_valid_email(email):
+    # Check if '@' is in the email and it's not the first or last character
+    if "@" not in email or email[0] == "@" or email[-1] == "@":
+        return False
+    
+    # Split the email into local part and domain part
+    parts = email.split("@")
+    if len(parts) != 2:  # There should only be one '@'
+        return False
 
-#Q7. Given a string as input, return True if its a valid email address, else return False.
+    local_part, domain_part = parts
+
+    # Check if the local part starts with a letter
+    if not local_part[0].isalpha():
+        return False
+
+    # Check if domain part contains a '.' and it's not the first or last character
+    if "." not in domain_part or domain_part[0] == "." or domain_part[-1] == ".":
+        return False
+
+    # Ensure both local and domain parts are non-empty
+    if not local_part or not domain_part:
+        return False
+
+    return True
+
+# Example usage
+input_email = 'abc11@gmail.com'
+print("Is valid email:", is_valid_email(input_email)) """
+
 """ import re
 
 def is_valid_email(email):
@@ -1271,6 +1252,37 @@ email = input("Enter an email address: ")
 print(is_valid_email(email)) """
 
 #Q8. Given a string as input, return True if its a valid mobile number in India, else return False.
+""" It must have 10 digits.
+    It must start with the digits 6, 7, 8, or 9."""
+
+""" def is_valid_mobile_number(number):
+    # Check if the string starts with "+91"
+    if not number.startswith("+91"):
+        return False
+    
+    # Remove the "+91" prefix to validate the remaining part
+    number = number[3:]
+    
+    # Check if the remaining length is 10
+    if len(number) != 10:
+        return False
+    
+    # Check if all remaining characters are digits
+    if not number.isdigit():
+        return False
+    
+    # Check if the first digit after +91 is between 6 and 9
+    if number[0] not in '6789':
+        return False
+
+    return True
+# Test cases
+print(is_valid_mobile_number("+919876543210"))  # True
+print(is_valid_mobile_number("+911234567890"))  # False
+print(is_valid_mobile_number("9876543210"))     # False (no +91)
+print(is_valid_mobile_number("+91987654321"))   # False (too short) """
+
+
 """ import re
 string='hello boy\'s my number is +911231232130 and `1231232442'
 x=re.search( r'\+91[0-9]{10}',string) """
@@ -1279,17 +1291,32 @@ x=re.search( r'\+91[0-9]{10}',string) """
 
 
 #Q9. Given a string as input, return True if its a palindrome, else return False (case sensitive and ignore spaces). Do not use string splicing.
-# import re
-# string='iitii'
-# k=(len(string))
-# x= re.findall(r'[a-zA-Z]', string)
-# print(x)      
-# for word in range(len(string)):
-#     if x[word]==x[k-word]:
-
-#        print('its a pelindrome')
+""" def get_pelindrome(str1):
+    str2=str1.replace(" ","") #remove spaces
+    str3=''
+    for char in str2:
+        str3=char+str3
+    if str2==str3:
+        return True
+    return False
+print(get_pelindrome('12321'))
+print(get_pelindrome('race car')) """
 
 #Q10. Given a paragraph as input, return a list of sentences. Use full-stop, exclamation and question mark as the three allowed delimiters between sentences. These punctuation marks should be included in the output list of sentences.
+""" def split_sentences(paragraph):
+    delimiters = ['.', '!', '?']  # List of allowed sentence delimiters
+    sentences = []
+    sentence = ''
+    for char in paragraph:
+        sentence += char  # Add character to current sentence
+        # Check if the character is a sentence delimiter
+        if char in delimiters:
+            sentences.append(sentence.strip())  # Add the current sentence to the list
+            sentence = ''  # Reset sentence for the next one
+    return sentences
+# Example usage
+paragraph = "Hello! How are you? I hope you're doing well. Have a great day."
+print(split_sentences(paragraph)) """
 
 
 

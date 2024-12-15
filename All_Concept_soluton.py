@@ -13,9 +13,7 @@
 # check_no()
 print(check_no()) """
 
-
 #2Q. Given two number return larger one
-
 """ def larger():
     x=int(input("Enter a number: "))
     y=int(input("Enter a number: "))
@@ -27,7 +25,6 @@ print(larger()) """
 
 #3Q. temp. is given in ferenhiet F=(C*1.8)+32
 #   If temp>90 degree return other wise return false
-
 """ def temp_check(c):
     f=(c*1.8)+32
     return f
@@ -36,7 +33,6 @@ print(temp_check(66)) """
 
 #4Q. Given a year, return True if it is a leap year, else return False. A leap year is divisible by 4, except for years that are divisible by 100. However, years that are divisible by 400 are also leap years.
 # year should be divisible by 4 , but not by 100, unless it is also divisible by 400.
-
 """ def leap_year(year):
     if year % 4 == 0:
         if year % 100 == 0:
@@ -47,8 +43,6 @@ print(temp_check(66)) """
         else:
             return True
 print(leap_year(2000)) """
-
-
 
 """ def leap_year(year):
      if year%4==0:
@@ -61,9 +55,7 @@ print(leap_year(2000)) """
               return('Its a leap year')
 (leap_year(300)) """
 
-
 # Q.Given two numbers, a and b, return the value of a/b (return None if b is zero).
-
 """ def div(a,b):
     if b!=0:
         return(a/b)
@@ -72,11 +64,8 @@ print(leap_year(2000)) """
 print(div(4,2))
 print(div(4,0)) """
 
-
 # Q. Given a point (x1, y1), return the quadrant (integer values given below) in which this point lies.
 # [0: origin, 1: first quadrant, 2: second quadrant, 3: third quadrant, 4: fourth quadrant, 12: positive y-axis, 23: negative x-axis, 34: negative y-axis, 41: positive x-axis]
-
-
 """ def quadrant(x,y):
     if x>0 and y>0:
         print("First Quadrant")
@@ -94,10 +83,7 @@ quadrant(-3,4)
 quadrant(2,-4)
 quadrant(-2,-4) """
 
-
 # Q. Given two points (x1, y1) and (x2, y2), return the slope and intercept of the line joining these two points (the line may be perfectly horizontal or vertical). Input should be in this format : (x1, y1, x2, y2).
-
-
 """ def slope():
  x1=int(input("Enter a number :"))
  y1=int(input("Enter a number :"))
@@ -110,9 +96,7 @@ quadrant(-2,-4) """
  print(intercept1)
 slope() """
 
-
 # Q. Given a quadratic equation with coefficients a, b and c, return the two solutions (may be real or complex). You should not take the square root of a negative number in your code. Output should be a list of two tuples. So if the roots are 1+2j and 1–2j, the output of the function should be [(1,2), (1,-2)]. If the roots are real, then the second part of both the tuples becomes zero.
-
 # a=2
 # b=2
 # c=7
@@ -142,10 +126,6 @@ def are_points_collinear(x1, y1, x2, y2, x3, y3):
 print(are_points_collinear(1, 1, 2, 2, 3, 3))  # True
 print(are_points_collinear(1, 1, 2, 2, 3, 4))  # False
  """
-
-
-
-
 
            # Concept-2  👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
 
@@ -198,7 +178,6 @@ print(sum_odd(10)) """  #1+3+5=9  #1+3+5+6=15 #15+7+9+11=35+9
             sum=sum+i
     print(sum)
 sum_even(10) """
-
 
 #Q6. Given a positive integer, return its binary representation (output using integer datatype)
 # if int=5 then binary number will be |5| 1
@@ -283,7 +262,6 @@ print(pel(1231))  # Outputs: False
 print(pel(121))   # Outputs: True
 print(pel(0))     # Outputs: True """
 
-
 """ def x():
     str1="rdar"
     str1.lower()
@@ -296,7 +274,6 @@ print(pel(0))     # Outputs: True """
         right-=1
     return('a pelin')
 print(x()) """
-
 
 """ def is_palindrome(s):
     # Convert the string to lowercase and remove spaces for accurate comparison
@@ -312,7 +289,6 @@ else:
     print(f"'{word}' is not a palindrome") """
 
 # 9. Given a positive integer, return the number of digits in it.
-
 """ def return_no_of_digits(num):
     if num == 0:
         return 1  # Special case for 0
@@ -323,11 +299,9 @@ else:
     return no_of_digits   #retrunig the result
 print(return_no_of_digits(103767)) """
 
-
 # 10. Given a positive integer, return the number of even digits in it.
 # NOTE: Cool problem!
 # x=09948
-
 """ num=9856420
 x=str(num)
 sum=0
@@ -342,7 +316,6 @@ print(sum) """
                         # 👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
 
 #1. Given a list of numbers, return its length and the sum of all these numbers.
-
 """ def get_len_sum(list):
         sum=0
         length=0
@@ -353,7 +326,6 @@ print(sum) """
 print(get_len_sum([12,45,75,34])) """
 
 #Q2. Given a list of numbers, return a list of the squares of all the numbers.
-
 """ def get_squares(list1):
     squares=[]
     for i in list1:
@@ -363,10 +335,8 @@ print(get_squares([12,45,75,34])) """
 
 
 #Q3. Given a list of numbers, return their mean and standard deviation.
-
 # mean = total_sum/total no.
 # standard_deviation = root[(summission_of(x-xbar)**2)/(total_num-1)] , x=mean
-
 """ list1 = [2, 44, 63, 22, 3]
 def get_mean_std_dev():
     def get_mean():
@@ -392,7 +362,6 @@ def get_mean_std_dev():
 print(get_mean_std_dev()) """
 
 #Q4. Given a list of integers, return the count of even numbers in it.
-
 """ def count_even_no():
     list=[12,44,3,7,42,43,10]
     count_even_no=0
@@ -403,7 +372,6 @@ print(get_mean_std_dev()) """
 print(count_even_no()) """
 
 #Q5. Given a list of numbers, return the list in reverse order (without using list splicing).
-
 """ def reverse_order_list():
     list1=[12,556,7,32,33]
     x=len(list1)                     #x=5
@@ -414,7 +382,6 @@ print(count_even_no()) """
 print(reverse_order_list()) """
 
 #Q6. Given a list of numbers, return the maximum number in it.
-
 """ def get_max(list):
     max=list[0]
     for i in list:
@@ -433,9 +400,7 @@ print(get_max([1,2,3,4,5,6.6,9])) """
 print(max_in_list()) """
 
 # 7. Given a list of integers and another integer, return the index of this given integer.
-
 # METHOD-1
-
 """ def get_index(list1,target=6):
     for i in range(len(list1)):
         if list1[i]==target:
@@ -443,7 +408,6 @@ print(max_in_list()) """
 print(get_index([23,67,2,6,9,6])) """
 
 # METHOD-2
-
 """ def get_index():
     list1=[23,67,2,6,9]
     target=6
@@ -455,7 +419,6 @@ print(get_index([23,67,2,6,9,6])) """
 print(get_index()) """
 
 # 8. Given a list of integers, return their Least Common Multiple (LCM).
-
 """ def get_least_common_multiple(numbers):
     lcm = 1
     for num in numbers:
@@ -465,7 +428,7 @@ print(get_index()) """
                 break
             max_val += max(lcm, num)  # Increment by larger value for efficiency
         lcm = max_val
-    return lcm
+    return int(lcm)
 # Example usage
 list1 = [2, 3,7]
 result = get_least_common_multiple(list1)
@@ -498,17 +461,17 @@ def find_gcd_of_list(numbers):
     current_gcd = numbers[0]  # Start with the first number
     for i in range(1, len(numbers)):  # Explicitly iterate from the second element
         current_gcd = gcd(current_gcd, numbers[i])
-        if current_gcd == 1:  # Early exit, as GCD of 1 is the smallest possible
-            break
+        # if current_gcd == 1:  # Early exit, as GCD of 1 is the smallest possible
+        #     break
     return current_gcd
 # Example usage
-list1 = [3, 7, 2]
+list1 = [6, 3, 2]
 result = find_gcd_of_list(list1)
-print("Greatest common divisor:", result)  # Outputs: 3 """
-
+print("Greatest common divisor:", result)  # Outputs: 3
+ """
 #Q10. Given a positive integer (n), return a list containing the first n integers in the Fibonacci series.
 # FS-0,1,1,2,3,5,8
-def generate_fibonacci(n):
+""" def generate_fibonacci(n):
     if n <= 0:
         return []  # Return an empty list for non-positive input
     elif n == 1:
@@ -529,7 +492,7 @@ def generate_fibonacci(n):
 # Example usage:
 n = 10
 result = generate_fibonacci(n)
-print("Fibonacci series:", result)
+print("Fibonacci series:", result) """
 
 """ for _ in range(3):
     if _==2:
@@ -542,7 +505,6 @@ print("Fibonacci series:", result)
 
 
 #Q1. Given a list of distinct numbers, return another list which contains the sum of all pairs of numbers in the given list (the same pair should not be taken twice).
-
 """ def pair_sums(list1):
     list2 = []  # Initialize the result list
     for i in range(len(list1)):
@@ -563,7 +525,6 @@ print(sum([1,2,3,4,5])) """
 # Output: [3, 4, 5, 6, 7, 8 , 9, 10, 11, 12, 13, 14, 15] """
 
 #Q2. Given a list of distinct numbers (may contain zero), return another list which contains the ratio of all pairs of numbers in the given list (the same pair should not be taken twice).
-
 """ def compute_ratios(numbers):
     # Initialize an empty list to store the ratios
     ratios = []
@@ -883,7 +844,6 @@ print(sort_based([8,5,3,6,2])) """
                             # 👍🤔💙🩵💚🫀❤️❤️🩷🧡💛
    
 #Q 1. Given two lists of the same length as input, return a dictionary with keys taken from the first list and values from the second list. If the list sizes are different, consider the length of the shorter one for creating the dictionary.
-
 """ list1=['a','b']
 list2=[1,2]
 dict1={}
@@ -951,7 +911,6 @@ for i in my_dict:
 
 
 # Q4 . Given a dictionary and a list of keys, return another dictionary only has the keys given in the input list, and values taken from the input dictionary.
-
 """ keys = ['a', 'e', 'f', 'd']
 dict1 = {'e': 1, 'f': 2, 'g': 3, 'h': 4}
 dict2 = {}
@@ -985,7 +944,6 @@ for i in dict1:
 
 
 # Q5. Given a dictionary, return the inverted dictionary, i.e. keys of the output dictionary are the values of the input dictionary, and values of the output dictionary are the keys of the input dictionary.
-
 """ dict1={'a':1,"b":2,"c":3}
 inv_dict1={}
 for key,value in dict1.items():
@@ -1006,7 +964,6 @@ print(inv_dict1)
     # dict1.values() """
 
 # 6. Given a dictionary containing the student names as keys and list of marks in 3 subjects as the dictionary values, return a list containing the average marks for each subject.
-
 """ dict1={"a":[15,20,25],"b":[30,35,40],"c":[45,50,55]}
 list1=[]
 for i in dict1:
@@ -1040,7 +997,6 @@ for people in dict1:
 print(list1) """
 
 #Q9. Given a list of integers, return its mode (list of numbers with highest frequency of occurrence) by using a dictionary in your code
-
 """ def mode(lst):
     dict1 = {}
     for i in lst:
@@ -1080,7 +1036,6 @@ print(mode)  # [3, 5, 2, 3] """
 
 
 #Q10. Given a text file with one word in each line, return a dictionary where the key is the word and the value is the number of times it occurs in the text file.
-
 """ def count_words_in_file(file_path):
     word_count = {}  # Initialize an empty dictionary to store word counts
     with open(file_path, 'r') as file:  # Open the file in read mode
@@ -1160,7 +1115,6 @@ for ele in range(len(string)):
 print(x) """
 
 #Q4. Given a string as input, return the number of words in it. Use space as a separator for words.
-
 """ def count_words(input_string):
     words = input_string.split()  # Split the string by spaces into a list of words
     return len(words)  # Return the number of words
@@ -1175,7 +1129,6 @@ sum=0
 for i in str2:
     sum=sum+1
 print(sum) """
-
 
 #Q5. Given a string as input, return the string with the first letter of each word capitalised.
 """ string='To take new keys'
